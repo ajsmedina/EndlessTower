@@ -1,0 +1,28 @@
+ENDLESS TOWER
+By Anton Medina
+
+Endless Tower is a randomly-generated endless RPG.
+
+Name your four explorers  (a fighter, a mage, a cleric, and an archer) and start exploring!
+Every character has their own strengths and weaknesses, as well as 3 unqiue subclasses to train.
+
+Navigate the floors by using the on-screen directions. Loot treasure chests for items,
+fight enemies for gold, and locate the stairs to move one.
+
+In the menu, you can view party member stats, use healing skills, and use items you've found.
+
+After every 5 floors, you will enter a shrine. Use your gold to level up your characters, improving your
+stats and learning new skills. After every other shrine, a boss battle awaits!
+
+In battle, choose to fight (use a skill), guard (reduce damage taken until your next turn), or run away.
+You can run away at any time unless it's a boss battle. However, if you run away, you don't get any gold!
+
+Each stat has its own useful effect:
+STR: Increase damage of physical skills and normal attacks.
+MAG: Increase damage of magical skills and increase max MP.
+VIT: Reduce damage taken and increase max MP.
+DEX: Reduce damage taken and rank higher on the turn order.
+
+Be careful, because if your party gets wiped out it's game over!
+Fight enemies, strengthen your party, and climb as high as you can to explore the Endless Tower.
+Good Luck!
