@@ -10,7 +10,6 @@ public class EndlessTower {
   public static void main(String[] args)throws IOException {
     setFont();
     runMainMenu();
-    
   }
   
   /** 
@@ -141,7 +140,7 @@ public class EndlessTower {
    */
   public static void saveHighScore(Party party) throws IOException{
     String name="";
-    PrintWriter fileOut = new PrintWriter(new FileWriter("RPG/ETHS.txt"));
+    PrintWriter fileOut = new PrintWriter(new FileWriter("ETHS.txt"));
     
     displayMessage("You've set a new high score!");
     while(name==null || name.length()==0){

@@ -184,7 +184,7 @@ public class PartyMember extends BattleMember {
     
     allSkills[0][1][1] = new Skill("Holy Song", 0, 8, true, TargetType.ALL_ALLIES, Elements.NONE, SkillEffect.DEFUP, "Increase defence of all allies.");
     allSkills[0][1][2] = new Skill("Healing Light", 40, 6, true, TargetType.ONE_ALLY, Elements.NONE, SkillEffect.HEAL, "Heal 40% of a party member's HP.");
-    allSkills[0][1][3] = new Skill("Vitality Cross", 1, 10, true, TargetType.ONE_ENEMY, Elements.PHYS, SkillEffect.DRAINHP, "Drain HP from one target.");
+    allSkills[0][1][3] = new Skill("Healing Prayer", 30, 12, true, TargetType.ALL_ALLIES, Elements.NONE, SkillEffect.HEAL, "Heal 30% HP to all allies.");
     
     allSkills[0][2][1] = new Skill("Life Trick", 1, 10, true, TargetType.ONE_ENEMY, Elements.PHYS, SkillEffect.DRAINHP, "Drain HP from one target.");
     allSkills[0][2][2] = new Skill("Blade Rush", 1, 20, true, TargetType.ALL_ENEMIES, Elements.PHYS, SkillEffect.DRAINHP, "Drain HP from all targets.");
@@ -215,7 +215,7 @@ public class PartyMember extends BattleMember {
     allSkills[2][0][3] =new Skill("Mana Wish", 0, 10, false, TargetType.ALL_ALLIES, Elements.NONE, SkillEffect.MPUP, "Restore MP to all allies based on user's MAG.");
     
     allSkills[2][1][1] =new Skill("Life Surge", 30, 12, true, TargetType.ALL_ALLIES, Elements.NONE, SkillEffect.HEAL, "Heal 30% HP to all allies.");
-    allSkills[2][1][2] =new Skill("Cure", 100, 15, true, TargetType.ONE_ALLY, Elements.NONE, SkillEffect.NONE, "Heal all HP to one ally.");
+    allSkills[2][1][2] =new Skill("Cure", 100, 15, true, TargetType.ONE_ALLY, Elements.NONE, SkillEffect.HEAL, "Heal all HP to one ally.");
     allSkills[2][1][3] =new Skill("Prayer", 100, 30, true, TargetType.ALL_ALLIES, Elements.NONE, SkillEffect.HEAL, "Heal all HP to all allies.");
     
     allSkills[2][2][1] =new Skill("Barrier", 0, 8, true, TargetType.ALL_ALLIES, Elements.NONE, SkillEffect.DEFUP, "Increase all allies' defence.");

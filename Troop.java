@@ -45,9 +45,9 @@ public class Troop extends Team{
    */
   private void createBoss(){
     Enemy newEnemy; 
+    newEnemy = selectBase();
     
     do{
-      newEnemy = selectBase();
       selectLegendaryTrait(newEnemy);
       selectTrait(newEnemy);
     }while(power>=2);
@@ -225,7 +225,7 @@ public class Troop extends Team{
     int randomInt;
     
     if(power >=2){
-      randomInt = (int)(Math.random()* 5); //0-2
+      randomInt = (int)(Math.random()* 7); //0-2
       
       switch(randomInt){
         //no trait if 0
@@ -279,6 +279,33 @@ public class Troop extends Team{
           newEnemy.addSkill(new Skill("Frenzy", 1.5, 10, true, TargetType.ALL_ENEMIES, Elements.PHYS, SkillEffect.NONE, ""));
           power -=5;
         }
+        case 5:
+          if(power >= 5 && newEnemy.checkTrait("Demonic")){
+          newEnemy.addName("Demonic");
+          newEnemy.changeGold(+50);
+          newEnemy.changeStat(Stats.MHP, +100);
+          newEnemy.changeStat(Stats.DEX, +20);
+          newEnemy.changeStat(Stats.VIT, +20);
+          newEnemy.changeAffinity(Elements.FIRE, +0.5);
+          newEnemy.changeAffinity(Elements.ICE, +0.5);
+          newEnemy.addSkill(new Skill("Devil's Smile", 2, 10, true, TargetType.ALL_ENEMIES, Elements.BLOOD, SkillEffect.DEFDOWN2, ""));
+          power -=5;
+        }
+        case 6:
+          if(power >= 10 && newEnemy.checkTrait("Ruinic")){
+          newEnemy.addName("Ruinic");
+          newEnemy.changeGold(+50);
+          newEnemy.changeStat(Stats.MHP, +100);
+          newEnemy.changeStat(Stats.MMP, +100);
+          newEnemy.changeStat(Stats.MAG, +30);
+          newEnemy.changeAffinity(Elements.FIRE, +1.0);
+          newEnemy.changeAffinity(Elements.ICE, +1.0);
+          newEnemy.changeAffinity(Elements.ELEC, +1.0);
+          newEnemy.addSkill(new Skill("Firestorm", 2, 5, true, TargetType.ALL_ENEMIES, Elements.FIRE, SkillEffect.NONE, ""));
+          newEnemy.addSkill(new Skill("Absolute Zero", 2, 5, true, TargetType.ALL_ENEMIES, Elements.ICE, SkillEffect.NONE, ""));
+          newEnemy.addSkill(new Skill("Megavolt", 2, 5, true, TargetType.ALL_ENEMIES, Elements.ELEC, SkillEffect.NONE, ""));
+          power -=10;
+        }
           break;
         default:
           break;
@@ -299,7 +326,7 @@ public class Troop extends Team{
     int randomInt;
     
     if(power >=2){
-      randomInt = (int)(Math.random()* 9); //0-2
+      randomInt = (int)(Math.random()* 10); //0-2
       
       switch(randomInt){
         //no trait if 0
@@ -307,6 +334,7 @@ public class Troop extends Team{
           if(power >= 2 && newEnemy.checkTrait("Buff")){
           newEnemy.addName("Buff");
           newEnemy.changeGold(+20);
+          newEnemy.changeStat(Stats.MHP, +50);
           newEnemy.changeStat(Stats.VIT, +10);
           newEnemy.changeStat(Stats.STR, +10);
           newEnemy.addSkill(new Skill("Heavy Strike", 1.5, 6, true, TargetType.ONE_ENEMY, Elements.NONE, SkillEffect.NONE, ""));
@@ -328,6 +356,7 @@ public class Troop extends Team{
           if(power >= 7 && newEnemy.checkTrait("Great")){
           newEnemy.addName("Great");
           newEnemy.changeGold(+50);
+          newEnemy.changeStat(Stats.MHP, +100);
           newEnemy.changeStat(Stats.STR, +10);
           newEnemy.changeStat(Stats.MAG, +10);
           newEnemy.changeStat(Stats.VIT, +10);
@@ -335,10 +364,12 @@ public class Troop extends Team{
           newEnemy.addSkill(new Skill("War Cry", 0, 10, true, TargetType.ALL_ALLIES, Elements.NONE, SkillEffect.ATKUP, ""));
           power -=7;
         }
+          break;
         case 4:
           if(power >= 5 && newEnemy.checkTrait("Flying")){
           newEnemy.addName("Flying");
           newEnemy.changeGold(+20);
+          newEnemy.changeStat(Stats.MHP, +50);
           newEnemy.changeStat(Stats.MAG, +10);
           newEnemy.changeStat(Stats.DEX, +10);
           newEnemy.changeAffinity(Elements.ELEC, +1);
@@ -350,6 +381,7 @@ public class Troop extends Team{
           if(power >= 4 && newEnemy.checkTrait("Armored")){
           newEnemy.addName("Armored");
           newEnemy.changeGold(+20);
+          newEnemy.changeStat(Stats.MHP, +100);
           newEnemy.changeStat(Stats.VIT, +15);
           newEnemy.changeStat(Stats.DEX, -5);
           newEnemy.changeAffinity(Elements.ELEC, +0.5);
@@ -361,6 +393,7 @@ public class Troop extends Team{
           if(power >= 15 && newEnemy.checkTrait("Super")){
           newEnemy.addName("Super");
           newEnemy.changeGold(+50);
+          newEnemy.changeStat(Stats.MHP, +100);
           newEnemy.changeStat(Stats.STR, +25);
           newEnemy.changeStat(Stats.MAG, +25);
           newEnemy.changeStat(Stats.VIT, +25);
@@ -368,6 +401,7 @@ public class Troop extends Team{
           newEnemy.addSkill(new Skill("War Cry", 0, 10, true, TargetType.ALL_ALLIES, Elements.NONE, SkillEffect.ATKUP, ""));
           power -=15;
         }
+          break;
         case 7:
           if(power >= 3 && newEnemy.checkTrait("Icy")){
           newEnemy.addName("Icy");
@@ -376,6 +410,18 @@ public class Troop extends Team{
           newEnemy.changeAffinity(Elements.ICE, -0.5);
           newEnemy.changeAffinity(Elements.FIRE, +1);
           newEnemy.addSkill(new Skill("Icicle Rain", 1.3, 10, true, TargetType.ALL_ENEMIES, Elements.ICE, SkillEffect.NONE, ""));
+          power -=3;
+        }
+          break;
+        case 8:
+          if(power >= 3 && newEnemy.checkTrait("Gravity")){
+          newEnemy.addName("Icy");
+          newEnemy.changeGold(+15);
+          newEnemy.changeStat(Stats.MHP, +100);
+          newEnemy.changeStat(Stats.STR, +10);
+          newEnemy.changeStat(Stats.MAG, +10);
+          newEnemy.addSkill(new Skill("Gravity Fist", 30, 1, true, TargetType.ONE_ENEMY, Elements.GRAV, SkillEffect.NONE, ""));
+          newEnemy.addSkill(new Skill("Gravity Field", 15, 1, true, TargetType.ALL_ENEMIES, Elements.GRAV, SkillEffect.NONE, ""));
           power -=3;
         }
           break;
