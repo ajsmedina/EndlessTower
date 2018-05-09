@@ -78,9 +78,7 @@ public class Party extends Team {
   }
   
   /**
-   *Changes the gold the party holds. Gold cannot be less than zero.
-   *
-   *@param change The amount to change the gold.
+   * Removes KO from all KOed party members.
    */
   public void reviveDeadMembers(){
     for(int i=0; i<getLength();i++){
